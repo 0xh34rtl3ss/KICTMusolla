@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
     <!-- <link rel="stylesheet" href="../static/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../static/css/style.css" />
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-]
   </head>
   <body>
     <section class="header-top">
@@ -21,7 +22,7 @@
           <div class="row">
             <div class="col-sm-2">
               <div class="log-img">
-                <img src="./assets/images/home.png" class="img-fluid" alt="" />
+                <img src="../static/assets/images/home.png" class="img-fluid" alt="" />
                 <h1>
                   MY <br />
                   HOME
@@ -40,8 +41,8 @@
           </div>
           <div class="row">
             <div class="mint-prayer">
-              <h1 id="total_vacancy">12</h1>
-              <img src="./assets/images/man.png" class="img-fluid" alt="" />
+              <h1 id="total_vacancy"></h1>
+              <img src="../static/assets/images/man.svg" class="img-fluid" alt="" />
             </div>
           </div>
         </div>
@@ -54,35 +55,35 @@
               <div class="col"></div>
               <div class="col-2">
                 <div class="time-prayer">
-                  <img src="./assets/images/icon/sunrise.png" alt="" />
+                  <img src="../static/assets/images/icon/sunrise.svg" alt="" />
                   <h6>5:50</h6>
                   <h6>fajr</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
-                  <img src="./assets/images/icon/sun (3).png" alt="" />
+                  <img src="../static/assets/images/icon/zuhr.svg" alt="" />
                   <h6>13:12</h6>
                   <h6>Zuhr</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
-                  <img src="./assets/images/icon/sunset3.png" alt="" />
+                  <img src="../static/assets/images/icon/asr.svg" alt="" />
                   <h6>16:35</h6>
                   <h6>Asr</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
-                  <img src="./assets/images/icon/sunrise (1).png" alt="" />
+                  <img src="../static/assets/images/icon/maghrib.svg" alt="" />
                   <h6>19:20</h6>
                   <h6>Maghrib</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
-                  <img src="./assets/images/icon/moon (1).png" alt="" />
+                  <img src="../static/assets/images/icon/isya.svg" alt="" />
                   <h6>20:34</h6>
                   <h6>Isya</h6>
                 </div>
@@ -117,7 +118,7 @@
           seconds = formatTime(currentDate.getSeconds()),
           formatHours = formatTime(((hours + 11) % 12) + 1),
           format = hours < 12 || hours == 24 ? "AM" : "PM";
-        time.innerHTML = `${formatHours}:${minutes}:${seconds} <small>${format}</small>`;
+        time.innerHTML = `${formatHours}:${minutes} <small>${format}</small>`;
       }
 
       function formatTime(value) {
@@ -148,7 +149,7 @@
         min = min < 10 ? "0" + min : min;
         sec = sec < 10 ? "0" + sec : sec;
 
-        let currentTime = hour + ":" + min + ":" + sec + am_pm;
+        let currentTime = hour + ":" + min + ":" + am_pm;
 
         document.getElementById("clock").innerHTML = currentTime;
       }
