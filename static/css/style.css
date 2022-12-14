@@ -1,0 +1,207 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  height: 100vh;
+}
+
+.header-top{
+    background-image: url(../../templates/assets/images/bg.jpg);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+
+}
+.mint-round-red {
+  background-image: url(../../templates/assets/images/WhatsApp_Image_2022-12-03_at_12.17.32_AM-removebg-preview.png);
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 215px;
+  padding: 9px 334px;
+}
+/* .header-overly{
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+} */
+
+.log-img img{
+    height: 95px;
+}
+.log-img h1 {
+    font-size: 30px;
+    color: #fff;
+    display: inline-flex;
+}
+
+#time {
+    font-size: 40px;
+    /* letter-spacing: ; */
+    font-weight: bold;
+    color: #fff;
+  }
+  .time{
+    display: flex;
+  }
+  small {
+    font-size: 30px !important; 
+    letter-spacing: 0.5rem;
+  }
+  
+  @media screen and (max-width: 870px){
+    #time, small {
+      font-size: 20px !important;
+    } 
+  }
+  
+  @media screen and (max-width: 576px){
+    #time, small {
+      font-size: 20px !important;
+    } 
+  }
+
+  .month {
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    letter-spacing: 3px;
+    /* margin-left: 20px; */
+    padding-left: 0px 25px 20px 20px;
+    padding: 0px 20px 0px 0px;
+}
+.time {
+  /* padding: 20px; */
+  padding-top: 10px;
+  text-align: center;
+  justify-content: center;
+  margin-right: 190px;
+}
+.home-text {
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  margin-right: 190px;
+}
+.mint-prayer{
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+.mint-prayer img {
+    height: 200px;
+    margin-top: -178px;
+}
+.mint-prayer h1{
+    color: #fff;
+    font-size: 250px;
+    display: inline;
+}
+
+
+#clock {
+  font-size: 45px;
+  color: #000;
+
+  text-align: center;
+}
+.time-prayer h6{
+  color: #000;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .log-img img {
+    height: 68px;
+}
+.log-img h1 {
+  font-size: 18px;
+  color: #fff;
+  display: inline-flex;
+}
+.log-img{
+  text-align: center;
+}
+.time {
+  /* padding: 20px; */
+  padding-top: 10px;
+  text-align: center;
+  justify-content: center;
+  margin-right: 74px;
+  width: 100%;
+}
+.month {
+  font-size: 21px;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  letter-spacing: 1px;
+  /* margin-left: 20px; */
+  padding-left: 0px 25px 20px 20px;
+  padding: 0px 6px 0px 0px;
+}
+.home-text {
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  margin-right: 0px;
+}
+.mint-prayer h1 {
+  color: #fff;
+  font-size: 180px;
+  display: inline;
+}
+.mint-prayer img {
+  height: 153px;
+  margin-top: -96px;
+}
+.mint-prayer {
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  padding: 26px 15px;
+}
+.mint-round-red {
+  background-image: url(../../templates/assets/images/WhatsApp_Image_2022-12-03_at_12.17.32_AM-removebg-preview.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+  padding: 0px 6px;
+  position: fixed;
+}
+
+#clock {
+  font-size: 19px;
+  color: #000;
+  text-align: center;
+}
+.time-prayer h6 {
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+}
+.time-prayer img{
+  height: 30px;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
