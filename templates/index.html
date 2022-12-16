@@ -102,6 +102,15 @@
 
              // Update the page with a new random number every second
              function jsfunction(){
+
+              $.ajax({
+  url: 'https://cors-anywhere.herokuapp.com/https://solat.my/api/daily/sgr01',
+  type: 'GET',
+  success: function(response) {
+    // do something with the response here
+  }
+});
+
             setInterval(function() {
             $.getJSON('/api', function(data) {
                 console.log(typeof(data.num));
@@ -116,9 +125,7 @@
                   });
          },3000);
 
-         $.getJSON('https://solat.my/api/daily/SGR01',function(data){
-          
-         });
+
         }
 
       const time = document.getElementById("time");
