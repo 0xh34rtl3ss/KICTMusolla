@@ -22,10 +22,9 @@
           <div class="row">
             <div class="col-sm-2">
               <div class="log-img">
-                <img src="../static/assets/images/home.png" class="img-fluid" alt="" />
+                <img src="../static/assets/images/home.svg" class="img-fluid" alt="" />
                 <h1>
-                  MY <br />
-                  HOME
+                
                 </h1>
               </div>
             </div>
@@ -48,6 +47,8 @@
         </div>
         <!-- <div class="container">
             <div class="row"> -->
+
+              <!-- use api : https://solat.my/api/daily/SGR01 -->
         <div class="container-fluid">
           <div class="mint-round-red">
             <div id="clock">8:10:45</div>
@@ -56,35 +57,35 @@
               <div class="col-2">
                 <div class="time-prayer">
                   <img src="../static/assets/images/icon/sunrise.svg" alt="" />
-                  <h6>5:50</h6>
+                  <h6 id="time-fajr">5:50</h6>
                   <h6>fajr</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
                   <img src="../static/assets/images/icon/zuhr.svg" alt="" />
-                  <h6>13:12</h6>
+                  <h6 id="time-zuhr">13:12</h6>
                   <h6>Zuhr</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
                   <img src="../static/assets/images/icon/asr.svg" alt="" />
-                  <h6>16:35</h6>
+                  <h6 id="time-asr">16:35</h6>
                   <h6>Asr</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
                   <img src="../static/assets/images/icon/maghrib.svg" alt="" />
-                  <h6>19:20</h6>
+                  <h6 id="time-maghrib">19:20</h6>
                   <h6>Maghrib</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
                   <img src="../static/assets/images/icon/isya.svg" alt="" />
-                  <h6>20:34</h6>
+                  <h6 id="time-isya">20:34</h6>
                   <h6>Isya</h6>
                 </div>
               </div>
@@ -103,10 +104,21 @@
              function jsfunction(){
             setInterval(function() {
             $.getJSON('/api', function(data) {
-                console.log(data);
+                console.log(typeof(data.num));
+
                   $('#total_vacancy').html(data.num);
-            });
-         }, 1000);
+                  if(data.num <20){ //green ellipse
+                    $('.mint-round-red').css('background-image', 'url(../static/assets/images/Ellipse7.svg)');
+                  }
+                  else{
+                    $('.mint-round-red').css('background-image', 'url(../static/assets/images/WhatsApp_Image_2022-12-03_at_12.17.32_AM-removebg-preview.svg)');
+                  }
+                  });
+         },3000);
+
+         $.getJSON('https://solat.my/api/daily/SGR01',function(data){
+
+         });
         }
 
       const time = document.getElementById("time");

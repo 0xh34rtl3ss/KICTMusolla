@@ -20,7 +20,7 @@ body{
 
 }
 .mint-round-red {
-  background-image: url(../assets/images/WhatsApp_Image_2022-12-03_at_12.17.32_AM-removebg-preview.png);
+  background-image: url(../assets/images/WhatsApp_Image_2022-12-03_at_12.17.32_AM-removebg-preview.svg);
   /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,6 +28,7 @@ body{
   padding: 9px 334px;
   bottom: 0px;
   position: fixed;
+  margin-left: 15%;
 }
 /* .header-overly{
     height: 100vh;
@@ -106,13 +107,42 @@ body{
   font-size: 500px;
     color: #D9D6D6;
     display: inline;
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 #clock {
   font-size: 45px;
   color: #000;
-
+  font-weight: bold;
   text-align: center;
 }
 .time-prayer h6{
