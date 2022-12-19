@@ -1,17 +1,17 @@
 from flask import Flask, render_template, jsonify
 from algo import generateRand
-from flask_cors import CORS
 import time
 import json
 import requests
 
 app = Flask(__name__)
-CORS(app)
 
+#global router
 @app.route('/')
 def home():
         return render_template('index.html')
 
+#requiet api route. get prayer time from solat.my , and no vacancy of prayer hall 
 @app.route('/api')
 def result_json():
 
@@ -26,7 +26,6 @@ def result_json():
                 asr = data1['prayerTime'][0]['asr']
                 maghrib = data1['prayerTime'][0]['maghrib']
                 isya = data1['prayerTime'][0]['isha']
-        # do something with the data here
         else:
         # error
                 print(f'Error: {response.status_code}')
