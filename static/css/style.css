@@ -24,11 +24,12 @@ body{
   /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
-  height: 215px;
+  /* ori - height: 215px; */
+  height: 300px;
   padding: 9px 334px;
   bottom: 0px;
   position: fixed;
-  margin-left: 15%;
+  margin-left: 20%;
 }
 /* .header-overly{
     height: 100vh;
@@ -107,11 +108,7 @@ body{
   font-size: 500px;
     color: #D9D6D6;
     display: inline;
-    animation: fadeIn 2s;
-    -webkit-animation: fadeIn 2s;
-    -moz-animation: fadeIn 2s;
-    -o-animation: fadeIn 2s;
-    -ms-animation: fadeIn 2s;
+    animation: fadeIn 3s infinite alternate;
 }
 
 @keyframes fadeIn {
@@ -119,25 +116,7 @@ body{
   100% { opacity: 1; }
 }
 
-@-moz-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 
-@-webkit-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-o-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-ms-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 
 #clock {
   font-size: 45px;
@@ -146,10 +125,16 @@ body{
   text-align: center;
 }
 .time-prayer h6{
+text-align: center;
   color: #000;
   font-size: 20px;
   font-weight: 800;
 }
+
+.time-prayer img{
+  justify-content: center;
+}
+
 
 
 /* Extra small devices (phones, 600px and down) */

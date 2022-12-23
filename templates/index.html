@@ -22,7 +22,7 @@
           <div class="row">
             <div class="col-sm-2">
               <div class="log-img">
-                <img src="../static/assets/images/home.svg" class="img-fluid" alt="" />
+                <a onclick="jsfunction()" href="#"><img src="../static/assets/images/home.svg" class="img-fluid" alt=""/></a>
                 <h1>
                 
                 </h1>
@@ -35,7 +35,7 @@
                 <p id="time">--:--:--</p>
               </div>
               <div class="home-text">Home Sweet Home</div>
-              <a onclick="jsfunction()" href="#">refresh</a>
+              
             </div>
           </div>
           <div class="row">
@@ -57,35 +57,35 @@
               <div class="col-2">
                 <div class="time-prayer">
                   <img src="../static/assets/images/icon/sunrise.svg" alt="" />
-                  <h6 id="time-fajr">5:50</h6>
+                  <h6 id="time-fajr" style="font-weight: bold;">-:--</h6>
                   <h6>fajr</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
                   <img src="../static/assets/images/icon/zuhr.svg" alt="" />
-                  <h6 id="time-zuhr">13:12</h6>
+                  <h6 id="time-zuhr" style="font-weight: bold;">-:--</h6>
                   <h6>Zuhr</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
                   <img src="../static/assets/images/icon/asr.svg" alt="" />
-                  <h6 id="time-asr">16:35</h6>
+                  <h6 id="time-asr" style="font-weight: bold;">-:--</h6>
                   <h6>Asr</h6>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <div class="time-prayer">
-                  <img src="../static/assets/images/icon/maghrib.svg" alt="" />
-                  <h6 id="time-maghrib">19:20</h6>
+                  <img src="../static/assets/images/icon/maghrib.svg" alt="" style="padding-left:15px;"/>
+                  <h6 id="time-maghrib" style="font-weight: bold;">-:--</h6>
                   <h6>Maghrib</h6>
                 </div>
               </div>
               <div class="col-2">
                 <div class="time-prayer">
                   <img src="../static/assets/images/icon/isya.svg" alt="" />
-                  <h6 id="time-isya">20:34</h6>
+                  <h6 id="time-isya" style="font-weight: bold;">-:--</h6>
                   <h6>Isya</h6>
                 </div>
               </div>
@@ -114,6 +114,11 @@
             setInterval(function() {
             $.getJSON('/api', function(data) {
                 console.log(typeof(data.num));
+                $('#time-fajr').html(data.fajr)
+                $('#time-zuhr').html(data.zuhr)
+                $('#time-asr').html(data.asr)
+                $('#time-maghrib').html(data.maghrib)
+                $('#time-isya').html(data.isya)
 
                   $('#total_vacancy').html(data.num);
                   if(data.num <20){ //green ellipse

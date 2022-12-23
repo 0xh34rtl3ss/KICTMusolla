@@ -20,12 +20,12 @@ def result_json():
         if response.status_code == 200:
         # success
                 data1 = response.json()
-                hijri = data1['prayerTime'][0]['hijri']
-                fajr = data1['prayerTime'][0]['fajr']
-                zuhr = data1['prayerTime'][0]['dhuhr']
-                asr = data1['prayerTime'][0]['asr']
-                maghrib = data1['prayerTime'][0]['maghrib']
-                isya = data1['prayerTime'][0]['isha']
+                hijri = (data1['prayerTime'][0]['hijri'])
+                fajr = (data1['prayerTime'][0]['fajr'])[:-3]
+                zuhr = (data1['prayerTime'][0]['dhuhr'])[:-3]
+                asr = (data1['prayerTime'][0]['asr'])[:-3]
+                maghrib = (data1['prayerTime'][0]['maghrib'])[:-3]
+                isya = (data1['prayerTime'][0]['isha'])[:-3]
         else:
         # error
                 print(f'Error: {response.status_code}')
