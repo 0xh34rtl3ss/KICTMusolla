@@ -17,6 +17,7 @@ body{
     background-size: cover;
     height: 100vh;
     background-attachment: fixed;
+    padding-top: 30px;
 
 }
 .mint-round-red {
@@ -108,7 +109,7 @@ body{
   font-size: 500px;
     color: #D9D6D6;
     display: inline;
-    animation: fadeIn 3s infinite alternate;
+    animation: fadeIn 1.5s infinite alternate;
 }
 
 @keyframes fadeIn {

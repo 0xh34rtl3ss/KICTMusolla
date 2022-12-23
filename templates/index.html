@@ -1,191 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
-    <!-- <link rel="stylesheet" href="../static/css/bootstrap.min.css" /> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
-    <link rel="stylesheet" href="../static/css/style.css" />
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="../static/css/bootstrap.min.css" /> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  </head>
-  <body>
-    <section class="header-top">
-      <div class="header-overly">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-2">
-              <div class="log-img">
-                <a onclick="jsfunction()" href="#"><img src="../static/assets/images/home.svg" class="img-fluid" alt=""/></a>
-                <h1>
-                
-                </h1>
-              </div>
-            </div>
-            <div class="col-sm-10">
-              <div class="time">
-                <p class="month">Thu ,</p>
-                <p class="month">12 May</p>
-                <p id="time">--:--:--</p>
-              </div>
-              <div class="home-text">Home Sweet Home</div>
-              
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <section class="header-top">
+    <div class="header-overly">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="log-img">
+              <a onclick="jsfunction()" href="#"><img src="../static/assets/images/home.svg" class="img-fluid"
+                  alt="" /></a>
+              <h1>
+
+              </h1>
             </div>
           </div>
-          <div class="row">
-            <div class="mint-prayer">
-              <h1 id="total_vacancy"></h1>
-              <img src="../static/assets/images/man.svg" class="img-fluid" alt="" />
+          <div class="col-sm-10">
+            <div class="time">
+              <p class="month">Thu ,</p>
+              <p class="month">12 May</p>
+              <p id="time">--:--:--</p>
             </div>
+            <div class="home-text">Home Sweet Home</div>
+
           </div>
         </div>
-        <!-- <div class="container">
+        <div class="row">
+          <div class="mint-prayer">
+            <h1 id="total_vacancy"></h1>
+            <img src="../static/assets/images/man.svg" class="img-fluid" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- <div class="container">
             <div class="row"> -->
 
-              <!-- use api : https://solat.my/api/daily/SGR01 -->
-        <div class="container-fluid">
-          <div class="mint-round-red">
-            <div id="clock">8:10:45</div>
-            <div class="row">
-              <div class="col"></div>
-              <div class="col-2">
-                <div class="time-prayer">
-                  <img src="../static/assets/images/icon/sunrise.svg" alt="" />
-                  <h6 id="time-fajr" style="font-weight: bold;">-:--</h6>
-                  <h6>fajr</h6>
-                </div>
+      <!-- use api : https://solat.my/api/daily/SGR01 -->
+      <div class="container-fluid">
+        <div class="mint-round-red">
+          <div id="clock">8:10:45</div>
+          <div class="row">
+            <div class="col"></div>
+            <div class="col-2">
+              <div class="time-prayer">
+                <img src="../static/assets/images/icon/sunrise.svg" alt="" />
+                <h6 id="time-fajr" style="font-weight: bold;">-:--</h6>
+                <h6>fajr</h6>
               </div>
-              <div class="col-2">
-                <div class="time-prayer">
-                  <img src="../static/assets/images/icon/zuhr.svg" alt="" />
-                  <h6 id="time-zuhr" style="font-weight: bold;">-:--</h6>
-                  <h6>Zuhr</h6>
-                </div>
-              </div>
-              <div class="col-2">
-                <div class="time-prayer">
-                  <img src="../static/assets/images/icon/asr.svg" alt="" />
-                  <h6 id="time-asr" style="font-weight: bold;">-:--</h6>
-                  <h6>Asr</h6>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="time-prayer">
-                  <img src="../static/assets/images/icon/maghrib.svg" alt="" style="padding-left:15px;"/>
-                  <h6 id="time-maghrib" style="font-weight: bold;">-:--</h6>
-                  <h6>Maghrib</h6>
-                </div>
-              </div>
-              <div class="col-2">
-                <div class="time-prayer">
-                  <img src="../static/assets/images/icon/isya.svg" alt="" />
-                  <h6 id="time-isya" style="font-weight: bold;">-:--</h6>
-                  <h6>Isya</h6>
-                </div>
-              </div>
-              <div class="col"></div>
             </div>
+            <div class="col-2">
+              <div class="time-prayer">
+                <img src="../static/assets/images/icon/zuhr.svg" alt="" />
+                <h6 id="time-zuhr" style="font-weight: bold;">-:--</h6>
+                <h6>Zuhr</h6>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="time-prayer">
+                <img src="../static/assets/images/icon/asr.svg" alt="" />
+                <h6 id="time-asr" style="font-weight: bold;">-:--</h6>
+                <h6>Asr</h6>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="time-prayer">
+                <img src="../static/assets/images/icon/maghrib.svg" alt="" style="padding-left:15px;" />
+                <h6 id="time-maghrib" style="font-weight: bold;">-:--</h6>
+                <h6>Maghrib</h6>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="time-prayer">
+                <img src="../static/assets/images/icon/isya.svg" alt="" />
+                <h6 id="time-isya" style="font-weight: bold;">-:--</h6>
+                <h6>Isya</h6>
+              </div>
+            </div>
+            <div class="col"></div>
           </div>
         </div>
-        <!-- </div>
-        </div> -->
       </div>
-    </section>
+      <!-- </div>
+        </div> -->
+    </div>
+  </section>
 
-    <script>
+  <script>
 
-             // Update the page with a new random number every second
-             function jsfunction(){
+    // Update the page with a new random number every second
+    function jsfunction() {
 
-              $.ajax({
-  url: 'https://cors-anywhere.herokuapp.com/https://solat.my/api/daily/sgr01',
-  type: 'GET',
-  success: function(response) {
-    // do something with the response here
-  }
-});
-
-            setInterval(function() {
-            $.getJSON('/api', function(data) {
-                console.log(typeof(data.num));
-                $('#time-fajr').html(data.fajr)
-                $('#time-zuhr').html(data.zuhr)
-                $('#time-asr').html(data.asr)
-                $('#time-maghrib').html(data.maghrib)
-                $('#time-isya').html(data.isya)
-
-                  $('#total_vacancy').html(data.num);
-                  if(data.num <20){ //green ellipse
-                    $('.mint-round-red').css('background-image', 'url(../static/assets/images/Ellipse7.svg)');
-                  }
-                  else{
-                    $('.mint-round-red').css('background-image', 'url(../static/assets/images/WhatsApp_Image_2022-12-03_at_12.17.32_AM-removebg-preview.svg)');
-                  }
-                  });
-         },3000);
-
-
+      $.ajax({
+        url: 'https://cors-anywhere.herokuapp.com/https://solat.my/api/daily/sgr01',
+        type: 'GET',
+        success: function (response) {
+          // do something with the response here
         }
+      });
 
-      const time = document.getElementById("time");
+      setInterval(function () {
+        $.getJSON('/api', function (data) {
+          console.log(typeof (data.num));
+          $('#time-fajr').html(data.fajr)
+          $('#time-zuhr').html(data.zuhr)
+          $('#time-asr').html(data.asr)
+          $('#time-maghrib').html(data.maghrib)
+          $('#time-isya').html(data.isya)
 
-      function getCurrentTime() {
-        const currentDate = new Date(),
-          hours = currentDate.getHours(),
-          minutes = formatTime(currentDate.getMinutes()),
-          seconds = formatTime(currentDate.getSeconds()),
-          formatHours = formatTime(((hours + 11) % 12) + 1),
-          format = hours < 12 || hours == 24 ? "AM" : "PM";
-        time.innerHTML = `${formatHours}:${minutes} <small>${format}</small>`;
+          $('#total_vacancy').html(data.num);
+          if (data.num < 20) { //green ellipse
+            $('.mint-round-red').css('background-image', 'url(../static/assets/images/Ellipse7.svg)');
+          }
+          else {
+            $('.mint-round-red').css('background-image', 'url(../static/assets/images/WhatsApp_Image_2022-12-03_at_12.17.32_AM-removebg-preview.svg)');
+          }
+        });
+      }, 3000);
+
+
+    }
+
+    const element = document.querySelector('.mint-prayer h1');
+
+    function updateElement() {
+      // Update the text of the element
+      // element.textContent = 'New text';
+
+      // Reset the animation by removing and re-adding the animation class
+      element.classList.remove('fadeIn');
+      void element.offsetWidth; // trigger reflow
+      element.classList.add('fadeIn');
+    }
+
+    setInterval(updateElement, 3000); // update the element every 3 seconds
+
+
+    const time = document.getElementById("time");
+
+    function getCurrentTime() {
+      const currentDate = new Date(),
+        hours = currentDate.getHours(),
+        minutes = formatTime(currentDate.getMinutes()),
+        seconds = formatTime(currentDate.getSeconds()),
+        formatHours = formatTime(((hours + 11) % 12) + 1),
+        format = hours < 12 || hours == 24 ? "AM" : "PM";
+      time.innerHTML = `${formatHours}:${minutes} <small>${format}</small>`;
+    }
+
+    function formatTime(value) {
+      return value < 10 ? `0${value}` : value;
+    }
+
+    setInterval(getCurrentTime, 1000);
+  </script>
+  <script>
+    setInterval(showTime, 1000);
+    function showTime() {
+      let time = new Date();
+      let hour = time.getHours();
+      let min = time.getMinutes();
+      let sec = time.getSeconds();
+      am_pm = "AM";
+
+      if (hour > 12) {
+        hour -= 12;
+        am_pm = "PM";
       }
-
-      function formatTime(value) {
-        return value < 10 ? `0${value}` : value;
-      }
-
-      setInterval(getCurrentTime, 1000);
-    </script>
-    <script>
-      setInterval(showTime, 1000);
-      function showTime() {
-        let time = new Date();
-        let hour = time.getHours();
-        let min = time.getMinutes();
-        let sec = time.getSeconds();
+      if (hour == 0) {
+        hr = 12;
         am_pm = "AM";
-
-        if (hour > 12) {
-          hour -= 12;
-          am_pm = "PM";
-        }
-        if (hour == 0) {
-          hr = 12;
-          am_pm = "AM";
-        }
-
-        hour = hour < 10 ? "0" + hour : hour;
-        min = min < 10 ? "0" + min : min;
-        sec = sec < 10 ? "0" + sec : sec;
-
-        let currentTime = hour + ":" + min + ":" + am_pm;
-
-        document.getElementById("clock").innerHTML = currentTime;
       }
 
-      showTime();
-    </script>
+      hour = hour < 10 ? "0" + hour : hour;
+      min = min < 10 ? "0" + min : min;
+      sec = sec < 10 ? "0" + sec : sec;
 
-    <!-- <script src="../static/js/bootstrap.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      let currentTime = hour + ":" + min + ":" + am_pm;
 
-    <!-- <script src="../static/js/popper.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      document.getElementById("clock").innerHTML = currentTime;
+    }
 
-  </body>
+    showTime();
+  </script>
+
+  <!-- <script src="../static/js/bootstrap.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- <script src="../static/js/popper.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
+</body>
+
 </html>
