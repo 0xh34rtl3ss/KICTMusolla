@@ -32,13 +32,26 @@ body{
   position: fixed;
   margin-left: 20%;
 }
+
+#seperator1{
+  height: 30px;
+  }
+
+#seperator{
+height: 30px;
+}
+
 /* .header-overly{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
 } */
 
 .log-img img{
-    height: 95px;
+    margin-left: 117px;
+    margin-top: -6px;
+    height: 140px;
+    padding-left: 0px;
+
 }
 .log-img h1 {
     font-size: 30px;
@@ -47,14 +60,18 @@ body{
 }
 
 #time {
-    font-size: 40px;
-    /* letter-spacing: ; */
-    font-weight: bold;
+  font-size: 70px;
+  font-weight: bold;
     color: #fff;
   }
   .time{
+    padding-bottom: 5px;
     display: flex;
   }
+  p {
+    margin-top: 0;
+    margin-bottom: -1rem;
+}
   small {
     font-size: 30px !important; 
     letter-spacing: 0.5rem;
@@ -73,7 +90,7 @@ body{
   }
 
   .month {
-    font-size: 40px;
+    font-size: 70px;
     font-weight: bold;
     color: #fff;
     display: inline-block;
@@ -82,14 +99,17 @@ body{
     padding-left: 0px 25px 20px 20px;
     padding: 0px 20px 0px 0px;
 }
+
 .time {
+ 
   /* padding: 20px; */
   padding-top: 10px;
   text-align: center;
   justify-content: center;
-  margin-right: 190px;
+  margin-right: 261px;
 }
 .home-text {
+  font-size: 30px;
   color: #fff;
   text-align: center;
   justify-content: center;
@@ -120,7 +140,7 @@ body{
 
 
 #clock {
-  font-size: 45px;
+  font-size: 70px;
   color: #000;
   font-weight: bold;
   text-align: center;
@@ -129,8 +149,8 @@ body{
 text-align: center;
   color: #000;
   font-size: 20px;
-  font-weight: 800;
 }
+
 
 .time-prayer img{
   justify-content: center;
@@ -152,6 +172,7 @@ text-align: center;
   text-align: center;
 }
 .time {
+
   /* padding: 20px; */
   padding-top: 10px;
   text-align: center;
@@ -160,16 +181,17 @@ text-align: center;
   width: 100%;
 }
 .month {
-  font-size: 21px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
   display: block;
-  letter-spacing: 1px;
   /* margin-left: 20px; */
   padding-left: 0px 25px 20px 20px;
   padding: 0px 6px 0px 0px;
 }
+
 .home-text {
+  
   color: #fff;
   text-align: center;
   justify-content: center;

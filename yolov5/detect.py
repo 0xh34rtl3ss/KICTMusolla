@@ -13,8 +13,9 @@ import os
 import platform
 import sys
 from pathlib import Path
-
+import sqlite3
 import torch
+import time
 import torch.backends.cudnn as cudnn
 
 FILE = Path(__file__).resolve()
@@ -31,7 +32,22 @@ from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import select_device
 
 
+# Function that counts the total number of vacancies
+
+def count_vacancies(enter, exit):
+    global Total       
+    Total = 42 - (enter- exit)
+    conn = sqlite3.connect('numbers.db')
+    c = conn.cursor()
+
+    c.execute('''CREATE TABLE IF NOT EXISTS vacancy (timestamp DATETIME, value INTEGER)''')
+    c.execute("INSERT INTO vacancy (timestamp, value) VALUES (?, ?)", (time.strftime('%Y-%m-%d %H:%M:%S'), i))
+    conn.commit()
+
 class detobj():
+    
+
+
     def __init__(self, nID, nX, nY):
         self.id = nID
         self.x = nX
@@ -57,11 +73,7 @@ class detobj():
         else:
             self.start = 1 # OUT    
 
-# Function that counts the total number of vacancies
-def count_vacancies(enter, exit):
-    Total = 42 - (enter - exit)
 
-    return Total
 
 
 @torch.no_grad()

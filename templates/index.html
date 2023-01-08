@@ -34,11 +34,10 @@
           </div>
           <div class="col-sm-10">
             <div class="time">
-              <p class="month">Thu ,</p>
-              <p class="month">12 May</p>
+              <p class="month" id="date-upper">--</p>
               <p id="time">--:--:--</p>
             </div>
-            <div class="home-text">Home Sweet Home</div>
+            <div class="home-text" id="hijri-date">---</div>
 
           </div>
         </div>
@@ -55,27 +54,29 @@
       <!-- use api : https://solat.my/api/daily/SGR01 -->
       <div class="container-fluid">
         <div class="mint-round-red">
+          <div id="seperator1"></div>
           <div id="clock">8:10:45</div>
+          <div id="seperator"></div>
           <div class="row">
             <div class="col"></div>
             <div class="col-2">
               <div class="time-prayer">
                 <img src="../static/assets/images/icon/sunrise.svg" alt="" />
-                <h6 id="time-fajr" style="font-weight: bold;">-:--</h6>
-                <h6>fajr</h6>
+                <h6 id="time-fajr">-:--</h6>
+                <h6>Fajr</h6>
               </div>
             </div>
             <div class="col-2">
               <div class="time-prayer">
                 <img src="../static/assets/images/icon/zuhr.svg" alt="" />
-                <h6 id="time-zuhr" style="font-weight: bold;">-:--</h6>
+                <h6 id="time-zuhr">-:--</h6>
                 <h6>Zuhr</h6>
               </div>
             </div>
             <div class="col-2">
               <div class="time-prayer">
                 <img src="../static/assets/images/icon/asr.svg" alt="" />
-                <h6 id="time-asr" style="font-weight: bold;">-:--</h6>
+                <h6 id="time-asr">-:--</h6>
                 <h6>Asr</h6>
               </div>
             </div>
@@ -89,7 +90,7 @@
             <div class="col-2">
               <div class="time-prayer">
                 <img src="../static/assets/images/icon/isya.svg" alt="" />
-                <h6 id="time-isya" style="font-weight: bold;">-:--</h6>
+                <h6 id="time-isya">-:--</h6>
                 <h6>Isya</h6>
               </div>
             </div>
@@ -104,38 +105,124 @@
 
   <script>
 
+
+
     // Update the page with a new random number every second
     function jsfunction() {
 
-      $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/https://solat.my/api/daily/sgr01',
-        type: 'GET',
-        success: function (response) {
-          // do something with the response here
-        }
-      });
+
 
       setInterval(function () {
         $.getJSON('/api', function (data) {
-          console.log(typeof (data.num));
+
+          // Convert the fajr prayer time to a Date object
+          var fajr = new Date();
+          var fajrTime = data.fajr.split(':');
+          fajr.setHours(fajrTime[0]);
+          fajr.setMinutes(fajrTime[1]);
+          fajr.setSeconds(0);
+
+          // Convert the zuhr prayer time to a Date object
+          var zuhr = new Date();
+          var zuhrTime = data.zuhr.split(':');
+          zuhr.setHours(zuhrTime[0]);
+          zuhr.setMinutes(zuhrTime[1]);
+          zuhr.setSeconds(0);
+
+          // Convert the asr prayer time to a Date object
+          var asr = new Date();
+          var asrTime = data.asr.split(':');
+          asr.setHours(asrTime[0]);
+          asr.setMinutes(asrTime[1]);
+          asr.setSeconds(0);
+
+          // Convert the maghrib prayer time to a Date object
+          var maghrib = new Date();
+          var maghribTime = data.maghrib.split(':');
+          maghrib.setHours(maghribTime[0]);
+          maghrib.setMinutes(maghribTime[1]);
+          maghrib.setSeconds(0);
+
+          // Convert the isya prayer time to a Date object
+          var isya = new Date();
+          var isyaTime = data.isya.split(':');
+          isya.setHours(isyaTime[0]);
+          isya.setMinutes(isyaTime[1]);
+          isya.setSeconds(0);
+
+          // Get the current time
+          var now = new Date();
+          var now_hours = now.getHours().toString().padStart(2, '0');
+          var now_minutes = now.getMinutes().toString().padStart(2, '0');
+
+          // Concatenate the hours and minutes into a single string in the format "hh:mm"
+          var nowString = now_hours + ':' + now_minutes;
+
+          // Create an array with the prayer times and the current time
+          var times = [fajr, zuhr, asr, maghrib, isya];
+
+          // Sort the array of times based on their value
+          times.sort(function (a, b) {
+            return a - b;
+          });
+
+          // Find the nearest prayer time
+          var nearestTime = times[0];
+          for (var i = 0; i < times.length - 1; i++) {
+            if (times[i] > now) {
+              nearestTime = times[i];
+              break;
+            }
+          }
+
+          // Calculate the elapsed time
+          var elapsedTime = nearestTime - now;
+
+          if (elapsedTime < 0) {
+            elapsedTime += 1000 * 60 * 60 * 24;
+          }
+
+          // Convert the elapsed time to hours, minutes, and seconds
+          var hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+          var minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+          // Convert the hours, minutes, and seconds to strings and add leading zeros if necessary
+          hours = hours.toString().padStart(2, '0');
+          minutes = minutes.toString().padStart(2, '0');
+          seconds = seconds.toString().padStart(2, '0');
+
+          // Concatenate the hours, minutes, and seconds into a single string in the format "hh:mm:ss"
+          var elapsedTimeString = hours + ' : ' + minutes + ' : ' + seconds;
+
+          // Update the clock element with the elapsed time
+          $('#clock').html(elapsedTimeString);
+          $('#time').html(nowString);
           $('#time-fajr').html(data.fajr)
+          $('#date-upper').html(data.date)
+          $('#hijri-date').html(data.hijri)
           $('#time-zuhr').html(data.zuhr)
           $('#time-asr').html(data.asr)
           $('#time-maghrib').html(data.maghrib)
           $('#time-isya').html(data.isya)
 
           $('#total_vacancy').html(data.num);
-          if (data.num < 20) { //green ellipse
+          if (data.num < 29) { //green ellipse
             $('.mint-round-red').css('background-image', 'url(../static/assets/images/Ellipse7.svg)');
           }
           else {
             $('.mint-round-red').css('background-image', 'url(../static/assets/images/WhatsApp_Image_2022-12-03_at_12.17.32_AM-removebg-preview.svg)');
           }
         });
-      }, 3000);
+      }, 1000);
 
 
     }
+
+
+
+
+
 
     const element = document.querySelector('.mint-prayer h1');
 
@@ -152,52 +239,6 @@
     setInterval(updateElement, 3000); // update the element every 3 seconds
 
 
-    const time = document.getElementById("time");
-
-    function getCurrentTime() {
-      const currentDate = new Date(),
-        hours = currentDate.getHours(),
-        minutes = formatTime(currentDate.getMinutes()),
-        seconds = formatTime(currentDate.getSeconds()),
-        formatHours = formatTime(((hours + 11) % 12) + 1),
-        format = hours < 12 || hours == 24 ? "AM" : "PM";
-      time.innerHTML = `${formatHours}:${minutes} <small>${format}</small>`;
-    }
-
-    function formatTime(value) {
-      return value < 10 ? `0${value}` : value;
-    }
-
-    setInterval(getCurrentTime, 1000);
-  </script>
-  <script>
-    setInterval(showTime, 1000);
-    function showTime() {
-      let time = new Date();
-      let hour = time.getHours();
-      let min = time.getMinutes();
-      let sec = time.getSeconds();
-      am_pm = "AM";
-
-      if (hour > 12) {
-        hour -= 12;
-        am_pm = "PM";
-      }
-      if (hour == 0) {
-        hr = 12;
-        am_pm = "AM";
-      }
-
-      hour = hour < 10 ? "0" + hour : hour;
-      min = min < 10 ? "0" + min : min;
-      sec = sec < 10 ? "0" + sec : sec;
-
-      let currentTime = hour + ":" + min + ":" + am_pm;
-
-      document.getElementById("clock").innerHTML = currentTime;
-    }
-
-    showTime();
   </script>
 
   <!-- <script src="../static/js/bootstrap.min.js"></script> -->
