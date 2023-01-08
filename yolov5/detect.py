@@ -7,6 +7,12 @@
 # 2. Terminal command: python3 detect.py --classes 0 --source 115534_final2.mp4 --weights rb_yolov5m_v2.pt --view-img
 
 
+from utils.torch_utils import select_device
+from utils.plots import Annotator, colors, save_one_box
+from utils.general import (LOGGER, Profile, check_file, check_img_size, check_imshow, check_requirements, colorstr, cv2,
+                           increment_path, non_max_suppression, print_args, scale_boxes, strip_optimizer, xyxy2xywh)
+from utils.dataloaders import IMG_FORMATS, VID_FORMATS, LoadImages, LoadScreenshots, LoadStreams
+from models.common import DetectMultiBackend
 import argparse
 from math import sqrt
 import os
@@ -24,29 +30,33 @@ if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
 ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 
-from models.common import DetectMultiBackend
-from utils.dataloaders import IMG_FORMATS, VID_FORMATS, LoadImages, LoadScreenshots, LoadStreams
-from utils.general import (LOGGER, Profile, check_file, check_img_size, check_imshow, check_requirements, colorstr, cv2,
-                           increment_path, non_max_suppression, print_args, scale_boxes, strip_optimizer, xyxy2xywh)
-from utils.plots import Annotator, colors, save_one_box
-from utils.torch_utils import select_device
+conn = sqlite3.connect('numbers.db')
+
 
 
 # Function that counts the total number of vacancies
 
-def count_vacancies(enter, exit):
-    global Total       
-    Total = 42 - (enter- exit)
-    conn = sqlite3.connect('numbers.db')
-    c = conn.cursor()
 
-    c.execute('''CREATE TABLE IF NOT EXISTS vacancy (timestamp DATETIME, value INTEGER)''')
-    c.execute("INSERT INTO vacancy (timestamp, value) VALUES (?, ?)", (time.strftime('%Y-%m-%d %H:%M:%S'), i))
-    conn.commit()
+# def count_vacancies(enter, exit):
+#     global    previous_total
+#     Total = 42 - (enter - exit)
+#       previous_total = 0
+#     if    previous_total != Total):
+#         print("updatedb")
+#         updateDB(Total)
+#           previous_total = Total
+
+
+# def updateDB(value):
+#     conn = sqlite3.connect('numbers.db')
+#     c = conn.cursor()
+
+#     c.execute('''CREATE TABLE IF NOT EXISTS vacancy (timestamp DATETIME, value INTEGER)''')
+#     c.execute("INSERT INTO vacancy (timestamp, value) VALUES (?, ?)", (time.strftime('%Y-%m-%d %H:%M:%S'), value))
+#     conn.commit()
+
 
 class detobj():
-    
-
 
     def __init__(self, nID, nX, nY):
         self.id = nID
@@ -68,12 +78,10 @@ class detobj():
 
     def Cross(self, Line):
         if self.y < Line:
-            self.start = 0 # IN
+            self.start = 0  # IN
 
         else:
-            self.start = 1 # OUT    
-
-
+            self.start = 1  # OUT
 
 
 @torch.no_grad()
@@ -82,36 +90,35 @@ def run(
         source=ROOT / 'data/images',  # file/dir/URL/glob/screen/0(webcam)
         data=ROOT / 'data/yolov5m.yaml',  # dataset.yaml path
         imgsz=(640, 720),  # inference size (height, width)
-        conf_thres = 0.50,  # confidence threshold
-        iou_thres = 0.50,  # NMS IOU threshold
-        max_det = 1000,  # maximum detections per image
-        device = '',  # cuda device, i.e. 0 or 0,1,2,3 or cpu
-        view_img = True,  # show results
-        save_txt = False,  # save results to *.txt
-        save_conf = False,  # save confidences in --save-txt labels
-        save_crop = False,  # save cropped prediction boxes
-        nosave = False,  # do not save images/videos
-        classes = None,  # filter by class: --class 0, or --class 0 2 3
-        agnostic_nms = False,  # class-agnostic NMS
-        augment = False,  # augmented inference
-        visualize = False,  # visualize features
-        update = False,  # update all models
-        project = ROOT / 'runs/detect',  # save results to project/name
-        name = 'exp',  # save results to project/name
-        exist_ok = False,  # existing project/name ok, do not increment
-        line_thickness = 3,  # bounding box thickness (pixels)
-        hide_labels = False,  # hide labels
-        hide_conf = False,  # hide confidences
-        half = False,  # use FP16 half-precision inference
-        dnn = False,  # use OpenCV DNN for ONNX inference
-        vid_stride = 1,  # video frame-rate stride
+        conf_thres=0.50,  # confidence threshold
+        iou_thres=0.50,  # NMS IOU threshold
+        max_det=1000,  # maximum detections per image
+        device='',  # cuda device, i.e. 0 or 0,1,2,3 or cpu
+        view_img=True,  # show results
+        save_txt=False,  # save results to *.txt
+        save_conf=False,  # save confidences in --save-txt labels
+        save_crop=False,  # save cropped prediction boxes
+        nosave=False,  # do not save images/videos
+        classes=None,  # filter by class: --class 0, or --class 0 2 3
+        agnostic_nms=False,  # class-agnostic NMS
+        augment=False,  # augmented inference
+        visualize=False,  # visualize features
+        update=False,  # update all models
+        project=ROOT / 'runs/detect',  # save results to project/name
+        name='exp',  # save results to project/name
+        exist_ok=False,  # existing project/name ok, do not increment
+        line_thickness=3,  # bounding box thickness (pixels)
+        hide_labels=False,  # hide labels
+        hide_conf=False,  # hide confidences
+        half=False,  # use FP16 half-precision inference
+        dnn=False,  # use OpenCV DNN for ONNX inference
+        vid_stride=1,  # video frame-rate stride
 ):
-
 
     source = str(source)
     save_img = not nosave and not source.endswith('.txt')  # save inference images
     is_file = Path(source).suffix[1:] in (IMG_FORMATS + VID_FORMATS)
-    is_url = source.lower().startswith(('rtsp://', 'rtmp://', 'http://', 'https://'))
+    is_url = source.lower().startswith(('rtsp://', '    previous_total://', 'http://', 'https://'))
     webcam = source.isnumeric() or source.endswith('.streams') or (is_url and not is_file)
     screenshot = source.lower().startswith('screen')
     if is_url and is_file:
@@ -145,10 +152,9 @@ def run(
     aid = 0
     curobj = detobj(0, 0, 0)
 
-
     CountUp = 0
     CountDown = 0
- 
+
     # Run inference
     model.warmup(imgsz=(1 if pt or model.triton else bs, 3, *imgsz))  # warmup
     seen, windows, dt = 0, [], (Profile(), Profile(), Profile())
@@ -173,6 +179,7 @@ def run(
         # pred = utils.general.apply_classifier(pred, classifier_model, im, im0s)
 
         # Process predictions
+        previous_total = 0
         for i, det in enumerate(pred):  # per image
             seen += 1
             if webcam:  # batch_size >= 1
@@ -205,14 +212,14 @@ def run(
                 if num == 0:
                     for *xyxy, conf, cls in reversed(det):
                         vecpos = torch.tensor(xyxy).view(1, 4).tolist()[0]
-                        xc = vecpos[0] + (vecpos[2] - vecpos[0]) /2
-                        yc = vecpos[1] + (vecpos[3] - vecpos[1]) /2
+                        xc = vecpos[0] + (vecpos[2] - vecpos[0]) / 2
+                        yc = vecpos[1] + (vecpos[3] - vecpos[1]) / 2
                         newobj = detobj(aid, xc, yc)
                         newobj.Cross(Line1[0])
                         tracked_objects.append(newobj)
 
                 co = 0
-                
+
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
                     if save_txt:  # Write to file
@@ -225,18 +232,17 @@ def run(
                         c = int(cls)  # integer class
                         vecpos = torch.tensor(xyxy).view(1, 4).tolist()[0]
 
-                        xc = vecpos[0] + (vecpos[2] - vecpos[0]) /2
-                        yc = vecpos[1] + (vecpos[3] - vecpos[1]) /2
+                        xc = vecpos[0] + (vecpos[2] - vecpos[0]) / 2
+                        yc = vecpos[1] + (vecpos[3] - vecpos[1]) / 2
 
                         curobj = None
-                     
+
                         for ob in tracked_objects:
                             d = sqrt((xc - ob.x) * (xc - ob.x) + (yc - ob.y) * (yc - ob.y))
                             if d < 40:
                                 ob.update(xc, yc)
                                 curobj = ob
                                 break
-
 
                         # Nearest id not found
                         if curobj == None:
@@ -245,10 +251,8 @@ def run(
                             tracked_objects.append(curobj)
                             aid += 1
 
-
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
-
 
                         if save_crop:
                             save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
@@ -282,19 +286,55 @@ def run(
             text2 = "{}: {}".format("OUT", CountDown)
             cv2.putText(im0, text2, (400, H - 650), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 3)
             cv2.line(im0, (300, H - 600), (W - 300, H - 600), (0, 0, 255), thickness=line_thickness)
-            text3 = "{}: {}".format("TOTAL VACANCIES", count_vacancies(CountUp, CountDown))
-            cv2.putText(im0, text3, (10, H - 1900), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), thickness=line_thickness)
+            text3 = "{}: {}".format("TOTAL VACANCIES", (42-(CountUp-CountDown)))
+            cv2.putText(im0, text3, (10, H - 1900), cv2.FONT_HERSHEY_SIMPLEX,
+                        2, (255, 255, 255), thickness=line_thickness)
+            
+            text4 = "{}: {}".format("previous_total",  previous_total)
+            cv2.putText(im0, text4, (400, H - 1000), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 3)
+
+            #######################################
+            Total = 42 - (CountUp - CountDown)
+            if Total != previous_total:
+                c = conn.cursor()
+                c.execute("SELECT timestamp FROM vacancy WHERE timestamp < ? ORDER BY timestamp DESC LIMIT 1", (time.strftime('%Y-%m-%d %H:%M:%S'),))
+                row = c.fetchone()
+
+                if row is not None:
+                    # Extract the seconds from the previous row's time
+                    previous_seconds = row[0][-2:]
+                    # Extract the seconds from the current time
+                    current_seconds = time.strftime('%S')
+
+                    if previous_seconds == current_seconds:
+                        # Do not insert new row into the table
+                        pass
+                    else:
+                        # Insert new row into the table
+                        c.execute("INSERT INTO vacancy (timestamp, value) VALUES (?, ?)", (time.strftime('%Y-%m-%d %H:%M:%S'), Total))
+                else:
+                    # Insert new row into the table
+                    c.execute("INSERT INTO vacancy (timestamp, value) VALUES (?, ?)", (time.strftime('%Y-%m-%d %H:%M:%S'), Total))
+                
+                
+                # c.execute("INSERT INTO vacancy (timestamp, value) VALUES (?, ?)", (time.strftime('%Y-%m-%d %H:%M:%S'), Total))
+                conn.commit()
+                previous_total = Total
+
+            #######################################
+
+
 
             if view_img:
                 if platform.system() == 'Linux' and p not in windows:
                     windows.append(p)
                     cv2.namedWindow(str(p), cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)  # allow window resize (Linux)
                     cv2.resizeWindow(str(p), 640, 720)
-                
-                cv2.resize(im0, (640,720))
+
+                cv2.resize(im0, (640, 720))
                 cv2.imshow(str(p), im0)
                 cv2.namedWindow(str(p))
-                if cv2.waitKey(1) == ord('q'):  
+                if cv2.waitKey(1) == ord('q'):
                     raise StopIteration
 
             # Save results (image with detections)
@@ -335,7 +375,8 @@ def parse_opt():
     parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'yolov5m.pt', help='model path or triton URL')
     parser.add_argument('--source', type=str, default=ROOT / 'data/images', help='file/dir/URL/glob/screen/0(webcam)')
     parser.add_argument('--data', type=str, default=ROOT / 'data/yolov5m.yaml', help='(optional) dataset.yaml path')
-    parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[640, 720], help='inference size h,w')
+    parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int,
+                        default=[640, 720], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float, default=0.6, help='confidence threshold')
     parser.add_argument('--iou-thres', type=float, default=0.6, help='NMS IoU threshold')
     parser.add_argument('--max-det', type=int, default=1000, help='maximum detections per image')
@@ -371,5 +412,7 @@ def main(opt):
 
 
 if __name__ == "__main__":
+    c = conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS vacancy (timestamp DATETIME, value INTEGER)''')
     opt = parse_opt()
     main(opt)

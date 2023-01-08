@@ -1,6 +1,4 @@
 from flask import Flask, render_template, jsonify
-from yolov5.detect import printcount_vacancies
-from numberExample import *
 import time
 import re
 import json
@@ -22,11 +20,6 @@ def result_json():
 
         response = requests.get('https://solat.my/api/daily/sgr01')
         
-
-        #count = printcount_vacancies() #to get number from YOLO
-        vacancy = return_json() #to get number from numberExample
-        # count = vacancy['value']
-        print(vacancy)
         #count = 27
         if response.status_code == 200:
         # success
