@@ -21,17 +21,19 @@ body{
 
 }
 .mint-round-red {
-  background-image: url(../assets/images/WhatsApp_Image_2022-12-03_at_12.17.32_AM-removebg-preview.svg);
+  background-image: url(../assets/images/mint-round/41.svg);
   /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
   /* ori - height: 215px; */
-  height: 300px;
-  padding: 9px 334px;
+  height: 382px;
+  padding: 92px 334px;
   bottom: 0px;
   position: fixed;
   margin-left: 20%;
+
 }
+
 
 #seperator1{
   height: 30px;
@@ -122,8 +124,8 @@ height: 30px;
     width: 100%;
 }
 .mint-prayer img {
-    height: 500px;
-    margin-top: -370px;
+    height: 399px;
+    margin-top: -377px;
 }
 .mint-prayer h1{
   font-size: 500px;

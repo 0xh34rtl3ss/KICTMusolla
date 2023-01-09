@@ -4,6 +4,7 @@ import re
 import json
 import sqlite3
 import requests
+import random
 
 app = Flask(__name__)
 
@@ -32,6 +33,9 @@ def result_json():
                 timestamp = row[0]
                 count = row[1]
                 conn.close()
+                
+                #count = random.randint(0,42)
+                #count = 33
     
     
                 data1 = response.json()
