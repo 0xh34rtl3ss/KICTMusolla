@@ -1,0 +1,318 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+[34m[1mdetect: [0mweights=['./yolov5/rb_yolov5m_v2.pt'], source=./yolov5/115534_final2.mp4, data=yolov5/data/yolov5m.yaml, imgsz=[640, 720], conf_thres=0.6, iou_thres=0.6, max_det=1000, device=, view_img=True, save_txt=False, save_conf=False, save_crop=False, nosave=False, classes=[0], agnostic_nms=False, augment=False, visualize=False, update=False, project=yolov5/runs/detect, name=exp, exist_ok=False, line_thickness=3, hide_labels=False, hide_conf=False, half=False, dnn=False, vid_stride=1
+YOLOv5 🚀 2023-1-9 Python-3.10.6 torch-1.12.1 CPU
+
+Fusing layers... 
+custom_YOLOv5m summary: 316 layers, 21468630 parameters, 0 gradients
+WARNING ⚠️ --img-size [640, 720] must be multiple of max stride 32, updating to [640, 736]
+video 1/1 (1/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 220.7ms
+video 1/1 (2/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.9ms
+video 1/1 (3/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 191.2ms
+video 1/1 (4/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.5ms
+video 1/1 (5/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.2ms
+video 1/1 (6/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.5ms
+video 1/1 (7/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.3ms
+video 1/1 (8/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 180.9ms
+video 1/1 (9/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.4ms
+video 1/1 (10/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.8ms
+video 1/1 (11/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.8ms
+video 1/1 (12/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.6ms
+video 1/1 (13/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.5ms
+video 1/1 (14/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 178.7ms
+video 1/1 (15/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 180.8ms
+video 1/1 (16/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.7ms
+video 1/1 (17/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 181.3ms
+video 1/1 (18/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.3ms
+video 1/1 (19/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.0ms
+video 1/1 (20/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 181.4ms
+video 1/1 (21/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.0ms
+video 1/1 (22/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.0ms
+video 1/1 (23/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 197.2ms
+video 1/1 (24/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 198.7ms
+video 1/1 (25/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 193.7ms
+video 1/1 (26/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.4ms
+video 1/1 (27/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.1ms
+video 1/1 (28/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.5ms
+video 1/1 (29/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 190.5ms
+video 1/1 (30/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 197.3ms
+video 1/1 (31/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.4ms
+video 1/1 (32/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.0ms
+video 1/1 (33/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.3ms
+video 1/1 (34/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.6ms
+video 1/1 (35/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.0ms
+video 1/1 (36/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.5ms
+video 1/1 (37/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.1ms
+video 1/1 (38/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.4ms
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/assets/images/home.svg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/assets/images/man.svg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/assets/images/icon/sunrise.svg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/assets/images/icon/zuhr.svg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/assets/images/icon/maghrib.svg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/assets/images/icon/asr.svg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/assets/images/mint-round/41.svg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/assets/images/icon/isya.svg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "GET /static/assets/images/bg.png HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:17:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+video 1/1 (39/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 268.7ms
+video 1/1 (40/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.1ms
+video 1/1 (41/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.0ms
+video 1/1 (42/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.8ms
+video 1/1 (43/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.5ms
+video 1/1 (44/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.9ms
+video 1/1 (45/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 190.0ms
+video 1/1 (46/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 191.0ms
+video 1/1 (47/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.5ms
+video 1/1 (48/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.9ms
+video 1/1 (49/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.7ms
+video 1/1 (50/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.5ms
+video 1/1 (51/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 181.7ms
+video 1/1 (52/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 180.3ms
+video 1/1 (53/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.4ms
+127.0.0.1 - - [09/Jan/2023 23:18:02] "GET /api HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:18:02] "GET /static/assets/images/mint-round/42.svg HTTP/1.1" 200 -
+video 1/1 (54/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.7ms
+video 1/1 (55/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.0ms
+video 1/1 (56/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.1ms
+127.0.0.1 - - [09/Jan/2023 23:18:03] "GET /api HTTP/1.1" 200 -
+video 1/1 (57/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.7ms
+video 1/1 (58/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.1ms
+video 1/1 (59/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.7ms
+video 1/1 (60/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.2ms
+127.0.0.1 - - [09/Jan/2023 23:18:04] "GET /api HTTP/1.1" 200 -
+video 1/1 (61/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.1ms
+video 1/1 (62/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.8ms
+video 1/1 (63/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.6ms
+video 1/1 (64/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.8ms
+127.0.0.1 - - [09/Jan/2023 23:18:05] "GET /api HTTP/1.1" 200 -
+video 1/1 (65/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.3ms
+video 1/1 (66/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 193.5ms
+video 1/1 (67/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.2ms
+video 1/1 (68/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.4ms
+127.0.0.1 - - [09/Jan/2023 23:18:06] "GET /api HTTP/1.1" 200 -
+video 1/1 (69/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.9ms
+video 1/1 (70/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.1ms
+video 1/1 (71/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.9ms
+video 1/1 (72/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.5ms
+127.0.0.1 - - [09/Jan/2023 23:18:07] "GET /api HTTP/1.1" 200 -
+video 1/1 (73/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.1ms
+video 1/1 (74/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.2ms
+video 1/1 (75/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.3ms
+video 1/1 (76/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.8ms
+video 1/1 (77/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.9ms
+127.0.0.1 - - [09/Jan/2023 23:18:08] "GET /api HTTP/1.1" 200 -
+video 1/1 (78/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.9ms
+video 1/1 (79/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.1ms
+video 1/1 (80/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.3ms
+video 1/1 (81/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.7ms
+video 1/1 (82/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 181.8ms
+video 1/1 (83/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 190.6ms
+127.0.0.1 - - [09/Jan/2023 23:18:10] "GET /api HTTP/1.1" 200 -
+video 1/1 (84/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.5ms
+127.0.0.1 - - [09/Jan/2023 23:18:10] "GET /api HTTP/1.1" 200 -
+video 1/1 (85/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.6ms
+video 1/1 (86/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.8ms
+video 1/1 (87/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.4ms
+127.0.0.1 - - [09/Jan/2023 23:18:11] "GET /api HTTP/1.1" 200 -
+video 1/1 (88/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.2ms
+video 1/1 (89/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.6ms
+video 1/1 (90/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.7ms
+video 1/1 (91/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.8ms
+video 1/1 (92/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.4ms
+127.0.0.1 - - [09/Jan/2023 23:18:12] "GET /api HTTP/1.1" 200 -
+video 1/1 (93/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.4ms
+video 1/1 (94/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.4ms
+video 1/1 (95/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 188.6ms
+video 1/1 (96/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 183.1ms
+127.0.0.1 - - [09/Jan/2023 23:18:13] "GET /api HTTP/1.1" 200 -
+video 1/1 (97/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.6ms
+video 1/1 (98/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 181.6ms
+video 1/1 (99/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 186.2ms
+127.0.0.1 - - [09/Jan/2023 23:18:14] "GET /api HTTP/1.1" 200 -
+video 1/1 (100/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 186.2ms
+video 1/1 (101/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 183.0ms
+video 1/1 (102/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.3ms
+127.0.0.1 - - [09/Jan/2023 23:18:15] "GET /api HTTP/1.1" 200 -
+video 1/1 (103/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.6ms
+video 1/1 (104/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 184.4ms
+video 1/1 (105/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 184.9ms
+video 1/1 (106/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.5ms
+127.0.0.1 - - [09/Jan/2023 23:18:16] "GET /api HTTP/1.1" 200 -
+video 1/1 (107/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.0ms
+video 1/1 (108/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 180.8ms
+video 1/1 (109/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.0ms
+video 1/1 (110/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.0ms
+127.0.0.1 - - [09/Jan/2023 23:18:17] "GET /api HTTP/1.1" 200 -
+video 1/1 (111/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.5ms
+video 1/1 (112/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 182.9ms
+video 1/1 (113/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 182.7ms
+video 1/1 (114/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.6ms
+127.0.0.1 - - [09/Jan/2023 23:18:18] "GET /api HTTP/1.1" 200 -
+video 1/1 (115/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 190.0ms
+video 1/1 (116/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.2ms
+video 1/1 (117/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.1ms
+video 1/1 (118/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 188.2ms
+127.0.0.1 - - [09/Jan/2023 23:18:19] "GET /api HTTP/1.1" 200 -
+video 1/1 (119/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 190.1ms
+video 1/1 (120/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 186.9ms
+video 1/1 (121/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 184.4ms
+video 1/1 (122/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.4ms
+127.0.0.1 - - [09/Jan/2023 23:18:20] "GET /api HTTP/1.1" 200 -
+video 1/1 (123/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.0ms
+video 1/1 (124/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.8ms
+video 1/1 (125/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 192.1ms
+127.0.0.1 - - [09/Jan/2023 23:18:21] "GET /api HTTP/1.1" 200 -
+video 1/1 (126/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 188.6ms
+video 1/1 (127/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 186.2ms
+video 1/1 (128/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.6ms
+video 1/1 (129/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.4ms
+video 1/1 (130/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 190.2ms
+127.0.0.1 - - [09/Jan/2023 23:18:22] "GET /api HTTP/1.1" 200 -
+video 1/1 (131/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 202.2ms
+video 1/1 (132/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.3ms
+video 1/1 (133/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 188.5ms
+127.0.0.1 - - [09/Jan/2023 23:18:23] "GET /api HTTP/1.1" 200 -
+video 1/1 (134/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.8ms
+video 1/1 (135/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.4ms
+video 1/1 (136/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 181.2ms
+127.0.0.1 - - [09/Jan/2023 23:18:24] "GET /api HTTP/1.1" 200 -
+video 1/1 (137/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 190.1ms
+video 1/1 (138/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 193.8ms
+video 1/1 (139/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.8ms
+video 1/1 (140/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 192.6ms
+127.0.0.1 - - [09/Jan/2023 23:18:25] "GET /api HTTP/1.1" 200 -
+video 1/1 (141/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 193.1ms
+video 1/1 (142/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 192.6ms
+video 1/1 (143/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.6ms
+video 1/1 (144/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.6ms
+127.0.0.1 - - [09/Jan/2023 23:18:26] "GET /api HTTP/1.1" 200 -
+video 1/1 (145/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 184.4ms
+video 1/1 (146/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 193.5ms
+video 1/1 (147/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 193.3ms
+video 1/1 (148/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 188.6ms
+127.0.0.1 - - [09/Jan/2023 23:18:27] "GET /api HTTP/1.1" 200 -
+video 1/1 (149/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 191.1ms
+video 1/1 (150/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.8ms
+video 1/1 (151/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.5ms
+127.0.0.1 - - [09/Jan/2023 23:18:28] "GET /api HTTP/1.1" 200 -
+video 1/1 (152/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 190.7ms
+video 1/1 (153/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.6ms
+video 1/1 (154/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 182.9ms
+video 1/1 (155/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.3ms
+127.0.0.1 - - [09/Jan/2023 23:18:29] "GET /api HTTP/1.1" 200 -
+video 1/1 (156/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 191.8ms
+video 1/1 (157/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.1ms
+video 1/1 (158/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 181.3ms
+video 1/1 (159/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.1ms
+127.0.0.1 - - [09/Jan/2023 23:18:30] "GET /api HTTP/1.1" 200 -
+video 1/1 (160/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.5ms
+video 1/1 (161/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 190.3ms
+video 1/1 (162/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.3ms
+127.0.0.1 - - [09/Jan/2023 23:18:31] "GET /api HTTP/1.1" 200 -
+video 1/1 (163/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.9ms
+video 1/1 (164/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 184.8ms
+video 1/1 (165/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 188.8ms
+video 1/1 (166/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 186.2ms
+127.0.0.1 - - [09/Jan/2023 23:18:32] "GET /api HTTP/1.1" 200 -
+video 1/1 (167/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.9ms
+video 1/1 (168/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 188.1ms
+video 1/1 (169/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 186.6ms
+video 1/1 (170/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 190.0ms
+127.0.0.1 - - [09/Jan/2023 23:18:33] "GET /api HTTP/1.1" 200 -
+video 1/1 (171/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 189.0ms
+video 1/1 (172/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.9ms
+video 1/1 (173/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 186.8ms
+video 1/1 (174/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 191.7ms
+127.0.0.1 - - [09/Jan/2023 23:18:34] "GET /api HTTP/1.1" 200 -
+video 1/1 (175/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.4ms
+video 1/1 (176/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 188.0ms
+video 1/1 (177/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.3ms
+video 1/1 (178/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.3ms
+127.0.0.1 - - [09/Jan/2023 23:18:35] "GET /api HTTP/1.1" 200 -
+video 1/1 (179/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 195.0ms
+video 1/1 (180/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.3ms
+video 1/1 (181/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 186.0ms
+127.0.0.1 - - [09/Jan/2023 23:18:36] "GET /api HTTP/1.1" 200 -
+video 1/1 (182/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 194.2ms
+video 1/1 (183/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 192.9ms
+video 1/1 (184/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 190.5ms
+video 1/1 (185/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 186.6ms
+127.0.0.1 - - [09/Jan/2023 23:18:37] "GET /api HTTP/1.1" 200 -
+video 1/1 (186/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 191.6ms
+video 1/1 (187/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 192.9ms
+video 1/1 (188/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 185.7ms
+video 1/1 (189/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 187.0ms
+127.0.0.1 - - [09/Jan/2023 23:18:38] "GET /api HTTP/1.1" 200 -
+video 1/1 (190/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 193.2ms
+video 1/1 (191/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 191.3ms
+video 1/1 (192/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 191.5ms
+video 1/1 (193/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 182.2ms
+127.0.0.1 - - [09/Jan/2023 23:18:39] "GET /api HTTP/1.1" 200 -
+video 1/1 (194/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 1 person, 204.8ms
+video 1/1 (195/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 203.7ms
+video 1/1 (196/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.5ms
+video 1/1 (197/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 191.2ms
+video 1/1 (198/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 190.5ms
+video 1/1 (199/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 190.8ms
+video 1/1 (200/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 191.8ms
+127.0.0.1 - - [09/Jan/2023 23:18:41] "GET /api HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:18:41] "GET /api HTTP/1.1" 200 -
+video 1/1 (201/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 191.4ms
+video 1/1 (202/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 193.2ms
+video 1/1 (203/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 191.5ms
+video 1/1 (204/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.0ms
+127.0.0.1 - - [09/Jan/2023 23:18:42] "GET /api HTTP/1.1" 200 -
+video 1/1 (205/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.0ms
+video 1/1 (206/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.5ms
+video 1/1 (207/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.4ms
+video 1/1 (208/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.0ms
+127.0.0.1 - - [09/Jan/2023 23:18:43] "GET /api HTTP/1.1" 200 -
+video 1/1 (209/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.1ms
+video 1/1 (210/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 190.4ms
+video 1/1 (211/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.1ms
+127.0.0.1 - - [09/Jan/2023 23:18:44] "GET /api HTTP/1.1" 200 -
+video 1/1 (212/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.7ms
+video 1/1 (213/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.8ms
+video 1/1 (214/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.7ms
+video 1/1 (215/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.7ms
+127.0.0.1 - - [09/Jan/2023 23:18:45] "GET /api HTTP/1.1" 200 -
+video 1/1 (216/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.8ms
+video 1/1 (217/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.2ms
+video 1/1 (218/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 189.6ms
+video 1/1 (219/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.3ms
+127.0.0.1 - - [09/Jan/2023 23:18:46] "GET /api HTTP/1.1" 200 -
+video 1/1 (220/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.8ms
+video 1/1 (221/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.2ms
+video 1/1 (222/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.6ms
+video 1/1 (223/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 182.6ms
+127.0.0.1 - - [09/Jan/2023 23:18:47] "GET /api HTTP/1.1" 200 -
+video 1/1 (224/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 186.6ms
+video 1/1 (225/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 185.1ms
+video 1/1 (226/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.3ms
+video 1/1 (227/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 192.1ms
+127.0.0.1 - - [09/Jan/2023 23:18:48] "GET /api HTTP/1.1" 200 -
+video 1/1 (228/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 184.9ms
+video 1/1 (229/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 180.3ms
+video 1/1 (230/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.9ms
+video 1/1 (231/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 190.0ms
+127.0.0.1 - - [09/Jan/2023 23:18:49] "GET /api HTTP/1.1" 200 -
+video 1/1 (232/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 191.3ms
+video 1/1 (233/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 187.7ms
+video 1/1 (234/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 190.5ms
+127.0.0.1 - - [09/Jan/2023 23:18:50] "GET /api HTTP/1.1" 200 -
+video 1/1 (235/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 188.7ms
+video 1/1 (236/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 179.8ms
+video 1/1 (237/10159) /Users/nqb/Documents/KICTMusolla/yolov5/115534_final2.mp4: 640x576 (no detections), 183.4ms
+127.0.0.1 - - [09/Jan/2023 23:18:51] "GET /api HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:18:52] "GET /api HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:18:53] "GET /api HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:18:54] "GET /api HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:18:55] "GET /api HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:18:56] "GET /api HTTP/1.1" 200 -
+127.0.0.1 - - [09/Jan/2023 23:18:57] "GET /api HTTP/1.1" 200 -

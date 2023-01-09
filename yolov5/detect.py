@@ -197,7 +197,7 @@ def run(
             annotator = Annotator(im0, line_width=line_thickness, example=str(names))
 
             (H, W) = im0.shape[:2]
-            Line1 = (H - 1500, W)
+            roi = (H - 1500, W)
 
             if len(det):
                 # Rescale boxes from img_size to im0 size
@@ -215,7 +215,7 @@ def run(
                         xc = vecpos[0] + (vecpos[2] - vecpos[0]) / 2
                         yc = vecpos[1] + (vecpos[3] - vecpos[1]) / 2
                         newobj = detobj(aid, xc, yc)
-                        newobj.Cross(Line1[0])
+                        newobj.Cross(roi[0])
                         tracked_objects.append(newobj)
 
                 co = 0
@@ -247,7 +247,7 @@ def run(
                         # Nearest id not found
                         if curobj == None:
                             curobj = detobj(aid, xc, yc)
-                            curobj.Cross(Line1[0])
+                            curobj.Cross(roi[0])
                             tracked_objects.append(curobj)
                             aid += 1
 
@@ -268,12 +268,12 @@ def run(
                 for ob in tracked_objects:
                     ob.clear()
                     if ob.start == 0:
-                        if ob.y > Line1[0]:
+                        if ob.y > roi[0]:
                             CountDown += 1
                             ob.start = 1
 
                     else:
-                        if ob.y <= Line1[0]:
+                        if ob.y <= roi[0]:
                             CountUp += 1
                             ob.start = 0
 
@@ -289,10 +289,7 @@ def run(
             text3 = "{}: {}".format("TOTAL VACANCIES", (42-(CountUp-CountDown)))
             cv2.putText(im0, text3, (10, H - 1900), cv2.FONT_HERSHEY_SIMPLEX,
                         2, (255, 255, 255), thickness=line_thickness)
-            
-            text4 = "{}: {}".format("previous_total",  previous_total)
-            cv2.putText(im0, text4, (400, H - 1000), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 3)
-
+        
             #######################################
             Total = 42 - (CountUp - CountDown)
             if Total != previous_total:
